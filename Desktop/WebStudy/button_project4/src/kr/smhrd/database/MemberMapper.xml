@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.smhrd.model.MemberDAO">
+
+	<!-- 회원가입 -->
+	<insert id="memberinsert" parameterType = "MemberVO">
+		insert into member values(#{member_id}, #{member_pw}, #{member_mail}, #{member_phone}, #{member_name}, #{member_address}, #{member_check}, #{member_license,jdbcType=VARCHAR})
+	</insert>
+
+	<!-- 로그인 -->
+	<select id="memberlogin" parameterType = "MemberVO" resultType="MemberVO">
+		select * from member where member_id = #{member_id} and member_pw = #{member_pw}
+	</select>
+	
+	<!-- 회원 수정 기능 -->
+	<update id="memberupdate" parameterType="MemberVO">
+		update member set member_pw = #{member_pw}, member_phone = #{member_phone}, member_address = #{member_address}, member_mail=#{member_mail} where member_id = #{member_id}
+	</update>
+	
+	<!-- 회원 삭제 기능 -->
+	<delete id="memberdelete" parameterType="String">
+		delete from member where member_id = #{member_id}
+	</delete>
+	
+	<!-- 회원 이메일 찾기 -->
+	<select id="membermailselect" parameterType="String"
+		resultType="String">
+		select member_mail from member where member_id =
+		#{member_id}
+	</select>
+</mapper>

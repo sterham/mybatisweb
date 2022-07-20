@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="kr.smhrd.domain.MemberVO" alias="MemberVO" />
+		<typeAlias type="kr.smhrd.domain.SeniorVO" alias="SeniorVO" />
+		<typeAlias type="kr.smhrd.domain.MemberSeniorVO" alias="MemberSeniorVO" />
+		<typeAlias type="kr.smhrd.domain.QuestionVO" alias="QuestionVO" />
+		<typeAlias type="kr.smhrd.domain.EmergencyVO" alias="EmergencyVO" />
+		<typeAlias type="kr.smhrd.domain.EmergencySenVO" alias="EmergencySenVO" />
+	</typeAliases>
+
+	<!-- Mybatis 프레임워크의 틀 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<!-- DB연결설정 -->
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe" />
+				<property name="username" value="cgi_1_0516_1" />
+				<property name="password" value="smhrd1" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- Mapper 파일(SQL 쿼리문을 가지고 있는 파일) 설정하기 -->
+	<mappers>
+		<mapper resource="kr/smhrd/database/MemberMapper.xml" />
+		<mapper resource="kr/smhrd/database/SeniorMapper.xml" />
+		<mapper resource="kr/smhrd/database/MemberSeniorMapper.xml" />
+		<mapper resource="kr/smhrd/database/QuestionMapper.xml" />
+		<mapper resource="kr/smhrd/database/ButtonSeniorMapper.xml" />
+		<mapper resource="kr/smhrd/database/EmergencyMapper.xml" />
+	</mappers>
+
+</configuration>                   
+
+                                                                                                                                                     
