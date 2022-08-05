@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=wave&color=778899&fontColor=FFFAFA&height=300&section=header&text=Button%Project&fontSize=90" />
+<img src="https://capsule-render.vercel.app/api?type=transparent&color=778899&fontColor=FFFAFA&height=300&section=header&text=Button%Project&fontSize=90" />
 
 
 <div align=center>버튼을 누를 때 인식되는 센서 값을 이용해 독거노인을 <b>모니터링 할 수 있는 웹 페이지</b><br><br><br>
